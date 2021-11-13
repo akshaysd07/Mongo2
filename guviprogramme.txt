@@ -1,0 +1,78 @@
+db.createCollection("users");
+db.createCollection("Topicsntasks")
+db.Topicsntasks.insertMany([{topic_name:"HTML5",task:"design a pan card as per provided image", month:"May"},
+                            {topic_name:"CSS",task:"design two pages of newspaper as per given image", month:"June"},
+                            {topic_name:"JAVASCRIPT",task:"make a tale from the data using URL API", month:"July"},
+                            {topic_name:"MYsql",task:"design a database for Guvi programme", month:"September"},
+                            {topic_name:"MongoDb",task:"design a database for Guvi programme", month:"October"},
+                            {topic_name:"ReactJS",task:"Design a Reusale card data", month:"October"},
+                            {topic_name:"ReactJS",task:"Perform CRUD Operations using axios", month:"October"},
+                            {topic_name:"ReactJS",task:"design a database for Guvi programme", month:"October"},
+                            {topic_name:"ReactJS",task:"design a database for Guvi programme", month:"October"},])
+db.createCollection("drives"); 
+db.drives.insertMany([{cmp_name:"Amazon",dod:"13-10-2021",std_name:"akshay",App:"not-Appeared"},
+                    {cmp_name:"Google",dod:"14-10-2021",std_name:"Anuja",App:"Appeared"},
+                    {cmp_name:"google",dod:"15-10-2021",std_name:"mayur",App:"not-Appeared"},
+                    {cmp_name:"Flipkart",dod:"16-10-2021",std_name:"mayur",App:"Appeared"},
+                    {cmp_name:"Myntra",dod:"17-10-2021",std_name:"Akshay",App:"Appeared"},
+                    {cmp_name:"Myntra",dod:"17-10-2021",std_name:"mayur",App:"Appeared"},
+                    {cmp_name:"Vodafone",dod:"18-10-2021",std_name:"Arun",App:"Appeared"},
+                    {cmp_name:"Vodafone",dod:"18-10-2021",std_name:"Ankur",App:"Appeared"},
+                    {cmp_name:"Yatra",dod:"29-10-2021",std_name:"Akshay",App:"Appeared"},
+                    {cmp_name:"Zomato",dod:"25-10-2021",std_name:"Jyoti",App:"Appeared"},
+                    {cmp_name:"Swiggy",dod:"23-10-2021",std_name:"Kishor",App:"Appeared"},
+                    ])
+                    
+db.createCollection("codekata");
+db.codekata.insertMany([{userId:1,prolem_solved:25},
+                {userId:2,prolem_solved:77},
+                {userId:3,prolem_solved:41},
+                {userId:4,prolem_solved:55},
+                {userId:5,prolem_solved:43},
+                {userId:6,prolem_solved:47},
+                {userId:7,prolem_solved:77},
+                {userId:8,prolem_solved:91},
+                {userId:9,prolem_solved:84},
+                {userId:10,prolem_solved:99},])
+                
+db.createCollection("mentors"); 
+db.mentors.insertMany([{mentor_name:"Tamil",count:17},
+                       {mentor_name:"Mohan",count:43},
+                       {mentor_name:"Suman",count:13},
+                       {mentor_name:"Raja",count:15},
+                       {mentor_name:"Sriniwas",count:21},
+                       {mentor_name:"Pandurang",count:15},
+                       {mentor_name:"Sahil",count:22},
+                       {mentor_name:"Akshay",count:25}])
+                    
+db.users.insertMany([{userId:1,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:2,attendance:"A",task:"not-sumitted",date:"16-10-2021"},
+                {userId:3,attendance:"A",task:"not-sumitted",date:"15-10-2021"},
+                {userId:4,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:5,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:6,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:7,attendance:"p",task:"not-sumitted",date:"15-10-2021"},
+                {userId:8,attendance:"p",task:"not-sumitted",date:"15-10-2021"},
+                {userId:9,attendance:"A",task:"not-sumitted",date:"15-10-2021"},
+                {userId:10,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:11,attendance:"A",task:"not-sumitted",date:"15-10-2021"},
+                {userId:12,attendance:"A",task:"not-sumitted",date:"15-10-2021"},
+                {userId:13,attendance:"A",task:"not-sumitted",date:"15-10-2021"},
+                {userId:14,attendance:"p",task:"sumitted",date:"15-10-2021"},
+                {userId:15,attendance:"p",task:"sumitted",date:"15-10-2021"}]);
+				
+				
+				
+				
+1. db.Topicsntasks.find({month:"October"});
+2. db.drives.find({dod: {$in:["15-10-2021","31-10-2021"]}})
+
+3.db.drives.find({App:"Appeared"},{_id:0,cmp_name:1,std_name:1}) 
+
+4. db.codekata.aggregate([
+        { $group: { _id: "3", prolem_solved: { $sum: "$prolem_solved" } } }
+    ])
+5. db.mentors.find({count:{$gt:15}})
+
+6. db.users.count({date: {$in:["15-10-2021","31-10-2021"]}},{attendance:"p"})	
+				
